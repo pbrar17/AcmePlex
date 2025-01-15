@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap');
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.98));
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(8, 145, 178, 0.2);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #0891b2, #0e7490);
+            color: #ffffff;
+            padding: 32px 24px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-weight: 300;
+            font-size: 28px;
+            letter-spacing: -0.5px;
+        }
+        .content {
+            padding: 32px 24px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .details {
+            margin: 24px 0;
+            padding: 24px;
+            background: rgba(8, 145, 178, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(8, 145, 178, 0.2);
+        }
+        .details p {
+            margin: 12px 0;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .details strong {
+            color: #67e8f9;
+            font-weight: 500;
+            min-width: 100px;
+            display: inline-block;
+        }
+        .message {
+            background: rgba(8, 145, 178, 0.15);
+            padding: 16px;
+            border-radius: 8px;
+            margin: 24px 0;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .footer {
+            margin-top: 32px;
+            padding: 24px;
+            text-align: center;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .footer a {
+            color: #67e8f9;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #0891b2;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            margin-top: 24px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background: #0e7490;
+        }
+        @media only screen and (max-width: 600px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+            .header {
+                padding: 24px 16px;
+            }
+            .content {
+                padding: 24px 16px;
+            }
+            .details {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Your Ticket Has Been Cancelled</h1>
+    </div>
+    <div class="content">
+        <p>Hi <strong th:text="${email}">Customer</strong>,</p>
+        <p>We're sorry to see you cancel your ticket. Here are the details of your cancellation:</p>
+
+        <div class="details">
+            <p><strong>Movie</strong> <span th:text="${movieTitle}">Movie Title</span></p>
+            <p><strong>Date</strong> <span th:text="${date}">Booking Date</span></p>
+            <p><strong>Showtime</strong> <span th:text="${showtime}">Show Time</span></p>
+            <p><strong>Seat</strong> <span th:text="${seat}">Seat Number</span></p>
+            <p><strong>Theatre</strong> <span th:text="${theatreName}">Theatre Name</span></p>
+            <p><strong>Refund</strong> $<span th:text="${refundAmount}">Refund Amount</span></p>
+        </div>
+
+        <div class="message">
+            The refund will be processed as AcmePlex Credit and will be available in your account within 24 hours. You can use this credit to book any future shows at our theatres.
+        </div>
+
+        <div class="text-center">
+            <a th:href="${bookingUrl}" class="btn">Book Another Show</a>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Questions? We're here to help! Contact us at <a href="mailto:acmeplex.notify@gmail.com">acmeplex.notify@gmail.com</a></p>
+        <p>© 2024 AcmePlex Cinemas. All rights reserved.</p>
+    </div>
+</div>
+</body>
+</html>
