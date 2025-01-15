@@ -99,4 +99,11 @@ The system follows a multi-layered architecture with a strong focus on modularit
 
 ## Testing
 
+- **Brute Force**: Manually Tested using Brute Force
+
 ## Contributors
+
+Pahul Brar
+Suchet Mangat
+Ragib Sina
+Hemin Kang
