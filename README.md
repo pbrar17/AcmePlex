@@ -103,7 +103,7 @@ The system follows a multi-layered architecture with a strong focus on modularit
 
 ## Contributors
 
-Pahul Brar
-Suchet Mangat
-Ragib Sina
-Hemin Kang
+- Pahul Brar
+- Suchet Mangat
+- Ragib Sina
+- Hemin Kang
